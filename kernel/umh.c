@@ -418,7 +418,7 @@ struct subprocess_info *call_usermodehelper_setup_file(struct file *file,
 
 	INIT_WORK(&sub_info->work, call_usermodehelper_exec_work);
 	sub_info->path = "none";
-	sub_info->file = file;
+	/* sub_info->file = file; */
 	sub_info->init = init;
 	sub_info->cleanup = cleanup;
 	sub_info->data = data;
