@@ -7,8 +7,6 @@
 #include <asm/asm-offsets.h>
 #include <asm/assembler.h>
 
-// arch/arm64/kernel/asm-offsets.c
-#define PT_REGS_SIZE   S_FRAME_SIZE
 #define        OPT_SLOT_SIZE   65536
 
 	.global optinsn_slot
@@ -100,12 +98,12 @@ optprobe_template_restore_orig_insn:
 	.global optprobe_template_restore_end
 optprobe_template_restore_end:
 	nop
-	.balign 8
+	.balign
 	.global optprobe_template_val
 optprobe_template_val:
 	1:	.long 0
 		.long 0
-	.balign 8
+	.balign
 	.global optprobe_template_orig_addr
 optprobe_template_orig_addr:
 	2:	.long 0
